@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <!--Main Navigation-->
+
+      <!-- Navbar -->
+      <nav id="NavBar"></nav>
+      <header id="header">
+      <div>
+        <video
+          style="max-width: 100%; max-height: 100%"
+          playsinline
+          autoplay
+          muted
+          loop
+        >
+          <source src="img/video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div
+        class="mask my-4 p-3"
+        style="background-color: rgba(255, 255, 255, 0)"
+      ></div>
+      <div
+        class="d-flex justify-content-center align-items-center h-100 sticky-top"
+      >
+        <div class="text-black text-center">
+          <h1 class="mb-3">ORDER?</h1>
+          <h5 class="mb-4">Log In or Register to Order</h5>
+
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Registration and Login"
+            id="aa"
+          >
+            <button
+              id="register"
+              class="btn btn-outline-dark btn-lg m-2"
+              href="#register-form"
+              target="_blank"
+              role="button"
+            >
+              REGISTER
+            </button>
+            <button
+              id="login"
+              class="btn btn-outline-dark btn-lg m-2"
+              href="#"
+              role="button"
+              rel="nofollow"
+              target="_blank"
+            >
+              LOG IN
+            </button>
+            <button
+              class="guestBtn btn btn-outline-dark btn-lg m-2"
+              href="#register-form"
+              target="_blank"
+              role="button"
+            >
+              GUEST
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--Main Navigation-->
+
+    <!----------      REGISTER     ------------------->
+    <div class="row" id="registerForm">
+      <div class="col-md-2 card mb-3 border border-white"></div>
+      <div class="col-md-8 card mb-3 mx-auto border border-white">
+        <div
+          class="card-header border-white bg-white text-black h3 text-center"
+        >
+          Register
+        </div>
+        <div class="card-body">
+          <form action="register" method="post">
+            <div class="form-group row mb-3">
+              <label for="email" class="col-sm-2 col-form-label">Email</label>
+
+              <div class="col-sm-10">
+                <input
+                  type="email"
+                  class="form-control-plaintext"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="password" class="col-sm-2 col-form-label"
+                >Password</label
+              >
+
+              <div class="col-sm-10">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  title="Password must contain at least 8 characters"
+                  minlength="8"
+                  maxlength="20"
+                  class="form-control"
+                  placeholder="Enter Password"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row mb-5">
+              <label for="confirm" class="col-sm-2 col-form-label"
+                >Confirm Password</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirm"
+                  name="confirm"
+                  placeholder="Confirm your password"
+                  title="Password must contain at least 8 characters"
+                  minlength="8"
+                  maxlength="20"
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-4 w-100">
+                <button
+                  type="clear"
+                  class="btn btn-primary me-3 px-5"
+                  name="clear"
+                >
+                  Clear
+                </button>
+                <button class="btn btn-primary px-5" id="signup">
+                  Register
+                </button>
+              </div>
+              <div class="col-sm-8">
+                <span id="signup-error"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-2 card mb-3"></div>
+    </div>
+
+    <!------------------    LOGIN      ------------------->
+    <div class="row" id="loginForm">
+      <div class="col-md-2 card mb-3 border border-white"></div>
+      <div class="col-md-8 card mb-3 border border-white mx-auto">
+        <div
+          class="card-header border-white bg-white text-black h3 text-center"
+        >
+          Login
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group row my-3">
+              <label for="email" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input
+                  type="email"
+                  class="form-control-plaintext border border-subtle shadow-sm"
+                  id="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="password" class="col-sm-2 col-form-label"
+                >Password</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Type your password"
+                />
+              </div>
+            </div>
+            <div class="form-group row mt-5">
+              <div class="col-sm-4 w-100">
+                <button
+                  type="clear"
+                  class="btn btn-primary px-5 me-3"
+                  name="clear"
+                >
+                  Clear
+                </button>
+                <button type="submit" class="btn btn-primary px-5" id="signin">
+                  Login
+                </button>
+              </div>
+              <div class="col-sm-8">
+                <span id="signin-error"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-2 card mb-3"></div>
+    </div>
+    <div class="row d-none" id="welcome">
+      <div class="border border-white"></div>
+      <!-- <div class="col-md-8 card mb-3">
+        <div class="card-header bg-primary text-white text-center">
+          Langara Forum Etiquette
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote">
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+              <li>
+                Vestibulum justo sem, dapibus vitae velit in, vehicula luctus
+                sapien
+              </li>
+              <li>
+                Nulla porta turpis malesuada, sagittis ligula vel, consequat
+                mauris
+              </li>
+              <li>Fusce interdum quam imperdiet placerat lobortis</li>
+              <li>Phasellus facilisis efficitur fermentum.</li>
+              <li>In pellentesque dui eget aliquam mattis</li>
+              <li>
+                Nulla nisl dolor, volutpat non hendrerit id, dignissim et mauris
+              </li>
+              <li>Aliquam lacinia enim a lectus ultricies auctor</li>
+            </ul>
+            <footer class="blockquote-footer">Langara Forum</footer>
+          </blockquote>
+        </div>
+      </div> -->
+      <div class="col-md-2 card mb-3"></div>
+    </div>
+    <!--Main layout-->
+    <main class="mt-1">
+      <div
+        id="cart"
+        class="d-flex justify-content-end align-items-center pt-5 pe-3 sticky-top"
+      >
+        <button
+          class="btn btn-light border border-danger border-5"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+          onclick="displayCartItems()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1.25em"
+            viewBox="0 0 576 512"
+          >
+            <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+            />
+          </svg>
+          <br />
+          CART
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end bg-light w-50"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <section class="vh-100" style="background-color: #eccabe41">
+              <div class="container h-100">
+                <div
+                  class="row d-flex justify-content-center align-items-center h-100"
+                >
+                  <p>
+                    <span class="h4" id="cartTitle" class="h3"></span>
+                  </p>
+                  <div class="col">
+                    <div
+                      id="cartItemContainer"
+                      class="bg-white card mb-5"
+                    ></div>
+
+                    <div id="grandTotal"></div>
+                    <div class="d-flex justify-content-around">
+                      <button
+                        type="button"
+                        class="btn btn-light btn-sm"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                      >
+                        Continue shopping
+                      </button>
+
+                      <button
+                        type="button"
+                        class="submitPayNowBtn btn btn-primary btn-md"
+                      >
+                        PAY NOW
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div id="menu" class="container">
+        <!--Section: Content-->
+        <hr />
+        <section class="mt-5">
+          <div class="row">
+            <div class="col-md-6 gx-5 mb-4">
+              <div
+                class="bg-image hover-overlay ripple shadow-2-strong"
+                data-mdb-ripple-color="light"
+              >
+                <img
+                  src="./img/cake-main.jpg"
+                  class="img-fluid w-75 h-50 rounded-2"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.15)"
+                  ></div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-6 gx-5 mb-4">
+              <h4><strong>Our Cakes</strong></h4>
+              <p class="text-muted">
+                Our cakes are simply the best, crafted with love and attention
+                to detail that sets them apart from the rest. From the finest,
+                freshest ingredients to the expert hands that skillfully bake
+                and decorate them, every cake we create is a masterpiece. We
+                take pride in delivering not only a delightful taste but also an
+                unforgettable experience with each bite. Whether it's a classic
+                flavor or a unique creation, our cakes are designed to leave a
+                lasting impression on your taste buds and in your heart. Indulge
+                in the perfection of our cakes and let us sweeten your special
+                moments with the unparalleled goodness that only we can deliver.
+              </p>
+              <p><strong>Pre-Order Information</strong></p>
+              <p class="text-muted">
+                Please allow 48 hours for pre-orders. If you need a cake sooner,
+                please call us at (555) 555-5555 to see if we can accommodate
+                your request.We also offer gluten-free and vegan options.
+              </p>
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="card">
+              <div
+                class="bg-image hover-overlay ripple"
+                data-mdb-ripple-color="light"
+              >
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.15)"
+                  ></div>
+                </a>
+                <div class="container mt-3">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <img
+                        src="./img/cake-carousel-1.jpg"
+                        class="img-fluid h-100 rounded"
+                        alt="Image 1"
+                      />
+                    </div>
+                    <div class="col-sm-4">
+                      <img
+                        src="./img/cake-carousel-2.jpg"
+                        class="img-fluid h-100 rounded"
+                        alt="Image 2"
+                      />
+                    </div>
+                    <div class="col-sm-4">
+                      <img
+                        src="./img/cake-carousel-3.jpg"
+                        class="img-fluid h-100 rounded"
+                        alt="Image 3"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="text-center mt-3 mb-4">
+                  <h5 class="display-5 d-inline">Order</h5>
+                  <span class="card-title display-5 d-inline">cake</span>
+                </div>
+                <p class="card-text">
+                  <!-- Our croissants are made with the finest ingredients and
+                  baked fresh every morning. Choose from plain, chocolate, or
+                  almond. -->
+                </p>
+                <!-- <p>Price: $<span class="productPrice">45.99</span></p> -->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm">Size</div>
+                    <div class="col-sm">Flavour</div>
+                    <div class="col-sm">Frosting & Toppings</div>
+                    <div class="col-sm">Quantity</div>
+                  </div>
+                </div>
+                <div class="d-flex gap-4 p-3">
+                  <select
+                    class="form-select form-select-sm mb-3"
+                    aria-label=".form-select-sm example"
+                    id="productSize"
+                  >
+                    <option selected>Select Size</option>
+                    <option value="small">Small - $34.99</option>
+                    <option value="medium">Med - 39.99</option>
+                    <option value="large">Large - 44.99</option>
+                    <option value="xlarge">X Large - 49.99</option>
+                  </select>
+
+                  <select
+                    class="form-select form-select-sm mb-3"
+                    aria-label=".form-select-sm example"
+                    id="productFlavour"
+                  >
+                    <option selected>Select Flavour</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="red velvet">Red Velvet</option>
+                    <option value="angel food">Angel Food</option>
+                    <option value="carrot">Carrot</option>
+                  </select>
+
+                  <select
+                    class="form-select form-select-sm mb-3"
+                    aria-label=".form-select-sm example"
+                    id="productFrosting"
+                  >
+                    <option selected>Select Frosting & Toppings</option>
+                    <option value="cream cheese">Cream Cheese</option>
+                    <option value="fresh fruit">Icing & Fresh Friut</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="sprinkles">Icing & Sprinkles</option>
+                  </select>
+
+                  <select
+                    class="custom-select form-select form-select-sm mb-3 py-3"
+                    aria-label=".form-select-sm example"
+                    id="productQuantity"
+                  >
+                    <option selected>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">Baker's Dozen</option>
+                  </select>
+                </div>
+                <div class="text-center mt-4 mb-4">
+                  <a
+                    href="#!"
+                    class="addToCartBtns btn btn-primary px-5 py-3"
+                    id="addToCartBtn"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--Section: Content-->
+
+        <p class="my-5"></p>
+
+        <!--Section: Content-->
+
+        <section class="text-center">
+          <div class="noSelectionModel"></div>
+
+          <h4 class="mb-5"><strong>Pasteries</strong></h4>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card">
+                <div
+                  class="bg-image hover-overlay ripple"
+                  data-mdb-ripple-color="light"
+                >
+                  <img src="./img/croissant-main.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.15)"
+                    ></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Croissant</h5>
+                  <p class="card-text">
+                    Our croissants are made with the finest ingredients and
+                    baked fresh every morning. Choose from plain, chocolate, or
+                    almond.
+                  </p>
+                  <p>Price: $<span class="productPrice">4.99</span></p>
+                  <div class="d-flex gap-4 p-3">
+                    <select
+                      class="form-select form-select-sm mb-3"
+                      aria-label=".form-select-sm example"
+                      id="productFlavour"
+                    >
+                      <option selected>Select One</option>
+                      <option value="plain">Plain</option>
+                      <option value="chocolate">Chocolate</option>
+                      <option value="almond">Almond</option>
+                    </select>
+
+                    <select
+                      class="custom-select form-select form-select-sm mb-3"
+                      aria-label=".form-select-sm example"
+                      id="productQuantity"
+                    >
+                      <option selected>Quantity</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">Baker's Dozen</option>
+                    </select>
+                  </div>
+                  <a
+                    href="#!"
+                    class="addToCartBtns btn btn-secondary"
+                    id="addToCartBtn"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <div
+                  class="bg-image hover-overlay ripple"
+                  data-mdb-ripple-color="light"
+                >
+                  <img src="./img/doughnut-main.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.15)"
+                    ></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Doughnut</h5>
+                  <p class="card-text">
+                    You can't go wrong with our doughnuts. They are made with
+                    fun and love. Become obsessed with our doughnuts withing the
+                    first bite.
+                  </p>
+                  <p>Price: $<span class="productPrice">3.99</span></p>
+                  <div class="d-flex gap-4 p-3">
+                    <select
+                      class="form-select form-select-sm mb-3"
+                      aria-label=".form-select-sm example"
+                      id="productFlavour"
+                    >
+                      <option selected>Select One</option>
+                      <option value="chocolate">Double Chocolate</option>
+                      <option value="plain">Cream Filled</option>
+                      <option value="almond">Jelly</option>
+                    </select>
+
+                    <select
+                      class="custom-select form-select form-select-sm mb-3"
+                      aria-label=".form-select-sm example"
+                      id="productQuantity"
+                    >
+                      <option selected>Quantity</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">Baker's Dozen</option>
+                    </select>
+                  </div>
+                  <a
+                    href="#!"
+                    class="addToCartBtns btn btn-secondary"
+                    id="addToCartBtn"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <div
+                  class="bg-image hover-overlay ripple"
+                  data-mdb-ripple-color="light"
+                >
+                  <img src="./img/cinnamon bun-main.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.15)"
+                    ></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Cinnamon Bun</h5>
+                  <p class="card-text">
+                    These cinnamon are the gooiest, most delicious cinnamon buns
+                    that you will ever have. They are baked fresh every morning.
+                  </p>
+                  <p>Price: $<span class="productPrice">5.99</span></p>
+                  <div class="d-flex gap-4 p-3">
+                    <select
+                      class="form-select form-select-sm mb-3"
+                      aria-label=".form-select-sm example"
+                      id="productFlavour"
+                    >
+                      <option selected>Select One</option>
+                      <option value="chocolate">Cream Cheese</option>
+                      <option value="plain">Apple</option>
+                      <option value="almond">Signature Glaze</option>
+                    </select>
+
+                    <select
+                      class="custom-select form-select form-select-sm mb-3"
+                      aria-label=".form-select-sm example"
+                      id="productQuantity"
+                    >
+                      <option selected>Quantity</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">Baker's Dozen</option>
+                    </select>
+                  </div>
+                  <a
+                    href="#!"
+                    class="addToCartBtns btn btn-secondary"
+                    id="addToCartBtn"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--Section: Content-->
+
+        <hr class="my-5" />
+
+        <!--Section: Content-->
+        <section class="mb-5">
+          <h4 class="mb-5 text-center pt-5">
+            <strong id="register-form">Register</strong>
+          </h4>
+
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+              <form id="registerForm">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="fNameInput" class="form-control" />
+                      <label class="form-label" for="fNameInput"
+                        >First name</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="lNameInput" class="form-control" />
+                      <label class="form-label" for="lNameInput"
+                        >Last name</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="emailInput" class="form-control" />
+                  <label class="form-label" for="emailInput"
+                    >Email address</label
+                  >
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="tel" id="phoneNumInput" class="form-control" />
+                  <label class="form-label" for="phoneNumInput"
+                    >Phone number</label
+                  >
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="passwordInput"
+                    class="form-control form-control current-password"
+                  />
+                  <label class="form-label" for="passwordInput">Password</label>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="subscribeInput"
+                    checked
+                  />
+                  <label class="form-check-label" for="subscribeInput">
+                    Subscribe to our newsletter
+                  </label>
+                </div>
+
+                <!-- Submit button -->
+                <button
+                  type="submit"
+                  class="submitNewCustomerBtn btn btn-primary btn-block mb-4"
+                >
+                  Sign up
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>or sign up with:</p>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-floating mx-1 bg-light"
+                  >
+                    <svg
+                      class=""
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="1em"
+                      viewBox="0 0 320 512"
+                    >
+                      <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                      />
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-floating mx-1 bg-light"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="1em"
+                      viewBox="0 0 488 512"
+                    >
+                      <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                      />
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-floating mx-1 bg-light"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="1em"
+                      viewBox="0 0 512 512"
+                    >
+                      <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                      />
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-floating mx-1 bg-light"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="1em"
+                      viewBox="0 0 496 512"
+                    >
+                      <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!--Section: Content-->
+
+        <hr class="my-5" />
+
+        <!--Section: Content-->
+        <section class="mb-5 d-none" id="tableSect">
+          <h4 class="mb-5 text-center pt-5">
+            <strong id="register-form">Orders/Admin</strong>
+          </h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Total</th>
+                <th class="text-center" scope="col">Phone</th>
+                <th class="text-center" scope="col">Items</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark Markson</td>
+                <td>$29.9</td>
+                <td class="text-center">123-123-1234</td>
+                <td class="text-center">4 Chocolate Croissants</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob Jacobson</td>
+                <td>$19.5</td>
+                <td class="text-center">123-333-4444</td>
+                <td class="text-center">
+                  4 Plain Croissants + 2 Cream Filled Doughnuts
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+    <!--Main layout-->
+    <!--Footer-->
+    <div id="footer"></div>
+
+    <!--Footer-->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/partials.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
+
+<!-- Our cinnamon buns are the gooiest and most delicious buns.
+Covered with cream cheese frosting. You will love them from
+the ouside to the soft warm center. -->
